@@ -43,8 +43,8 @@ There are three python scripts each deals with a specific part of the project.
 3. run.py: Launches the web app where we can input a message and get the categories it belongs to.
 
 ## Results<a name="results"></a>
-![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res1.jpg)
-![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.jpg)
+![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res1.PNG)
+![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
