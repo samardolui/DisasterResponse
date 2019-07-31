@@ -15,6 +15,8 @@ Use below commands to install these two libraries.
 
 pip install nltk
 pip install SQLAlchemy
+pip install Flask
+conda install -c plotly plotly 
 
 Then run the below command to download relevant nltk libraries:
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger','stopwords'])
@@ -41,13 +43,22 @@ Typically, when there is a disaster, millions of messages seeking relief come vi
 
 ## File Descriptions <a name="files"></a>
 There are three python scripts each deals with a specific part of the project.
-1. process_data.py:  This is basically an ETL pipeline, where we clean data and load into database.
-2. train_classifier.py:  ML pipeline for training a classifier and saving the model into a file.
-3. run.py: Launches the web app where we can input a message and get the categories it belongs to.
+Data:
+* disaster_messages.csv: File containing 26248 messages from social media, news or direct sources.  
+* disaster_categories.csv: File containing the category labels of the disaster messages. A message can belong to multiple categories.
+* process_data.py: This is basically an ETL pipeline, where we cleaned data and saved in a database.
+* DisasterResponse.db: Output of process_data.py script. It's a database file where the script stores data.
+Model:
+* train_classifier.py: This is where the text were processed using NLP techniques and then a ML pipeline was trained on the data.
+* classifier.pkl: Output of train_classifier.py script. It contains the trained model that can be used for making predictions.
+App:
+* run.py: Launches the web app which takes a message as an input and outputs the categories it belongs to.
+* templates: Contains the code for rendering the app in a web page.
+Images: Contains images used in this description file.
 
 ## Results<a name="results"></a>
-![Result 1](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result1.jpg)
-![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result2.jpg)
+![Result 1](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res1.jpg)
+![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.jpg)
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
