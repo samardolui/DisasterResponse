@@ -33,7 +33,7 @@ After the installations, follow the below instruction using Python versions 3.*.
 
 3. Go to http://127.0.0.1:8080/
 
-Alternatively, you can use the trained model available in the 'models' folder and skip step 1 and step 2.
+Alternatively, you can use the trained model available in the 'models' folder and skip step 1.
 
 ## Project Motivation<a name="motivation"></a>
 
@@ -46,8 +46,8 @@ There are three python scripts each deals with a specific part of the project.
 3. run.py: Launches the web app where we can input a message and get the categories it belongs to.
 
 ## Results<a name="results"></a>
-![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result1.jpg)
-![alt text](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result2.jpg)
+![Result 1](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result1.jpg)
+![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/result2.jpg)
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
