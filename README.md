@@ -57,8 +57,8 @@ App:
 Images: Contains images used in this description file.
 
 ## Results<a name="results"></a>
-![Result 1](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res1.jpg)
-![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.jpg)
+![Result 1](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res1.PNG)
+![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
