@@ -65,4 +65,4 @@ Result of a sample message categorization
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-The data was obtained from  [Figure Eight](https://www.figure-eight.com/dataset/combined-disaster-response-data/). All credits to them for compiling the dataset and making it publicly available.
+Credits to Udacity and [Figure Eight](https://www.figure-eight.com/dataset/combined-disaster-response-data/)  for coming up with the awesome project idea and compiling the dataset.
