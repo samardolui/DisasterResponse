@@ -72,12 +72,12 @@ Result of a sample message categorization
 ![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
 Though the model generalized well for most of the categories, some categories like 'child alone','shops','offer'
-simply did not have enough data to train on. In class imbalance problem like this , the model usually develops a bias towards the majority classes. As a possible next step, we can explore various strategies to handle this problem. 
+simply did not have enough data to train on. In class imbalance problems like this , the model usually develops a bias towards the majority classes and 'accuracy' score does not reflect the true model performance. That's why we used 'f1_score', a weighted harmonic mean of precision and recall as the metric for our model evaluation. As a possible next step, we can explore various strategies to improve model performance. [This](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/) awesome article by Jason Brownlee discusses this in more detail. 
+Here are some of the approaches we can take:
 * Gathering more data
 * Oversampling the minority and/or undersampling the majority class
 * Generating synthetic data
 
-[This](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/) awesome article by Jason Brownlee discusses this in more detail.
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
