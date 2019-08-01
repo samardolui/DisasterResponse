@@ -10,7 +10,7 @@
 
 ## Installation <a name="installation"></a>
 
-Besides the Anaconda distribution of Python, NLTK and sqlalchemy libraries needs to be installed.
+Besides the Anaconda distribution of Python, NLTK and sqlalchemy libraries need to be installed.
 Use below commands to install these two libraries.
 
 pip install nltk
@@ -29,7 +29,7 @@ After the installations, follow the below instruction using Python versions 3.*.
 
 1. Run the following commands in the project's root directory to set up your database and model.
 
-    - To run ETL pipeline that cleans data and stores in database
+    - To run ETL pipeline that cleans data and stores in a database
         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
     - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
@@ -52,15 +52,15 @@ Data:
 * disaster_messages.csv: File containing 26248 messages from social media, news or direct sources.  
 * disaster_categories.csv: File containing the category labels of the disaster messages. A message can belong to multiple categories.
 * process_data.py: This is basically an ETL pipeline, where we cleaned data and saved in a database.
-* DisasterResponse.db: Output of process_data.py script. It's a database file where the script stores data.
+* DisasterResponse.db: The output of process_data.py script. It's a database file where the script stores data.
 
 Model:
-* train_classifier.py: This is where the text were processed using NLP techniques and then a ML pipeline was trained on the data.
-* classifier.pkl: Output of train_classifier.py script. It contains the trained model that can be used for making predictions.
+* train_classifier.py: This is where we did the text processing using NLP techniques and then trained a machine learning pipeline on the data.
+* classifier.pkl: The output of train_classifier.py script. It contains the trained model that can be used for making predictions.
 
 App:
 * run.py: Launches the web app which takes a message as an input and outputs the categories it belongs to.
-* templates: Contains the code for rendering the app in a web page.
+* templates: Contains the code for rendering the app on a web page.
 
 Images: Contains images used in this description file.
 
@@ -74,7 +74,7 @@ Result of a sample message categorization:
 ![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
 Though the model generalized well for most of the categories, some categories like 'child alone','shops','offer'
-simply did not have enough data to train on. In class imbalance problems like this , the model usually develops a bias towards the majority classes and 'accuracy' score does not reflect the true model performance. That's why we used 'f1_score', a weighted harmonic mean of precision and recall as the metric for our model evaluation. As a possible next step, we can explore various strategies to improve the model performance:
+simply did not have enough data to train on. In class imbalance problems like this, the model usually develops a bias towards the majority classes and the 'accuracy' score does not reflect the true model performance. That's why we used 'f1_score', a weighted harmonic mean of precision and recall as the metric for our model evaluation. As a possible next step, we can explore various strategies to improve the model performance:
 * Gather more data
 * Oversample the minority and/or undersample the majority class
 * Generate synthetic data using algorithms like Synthetic Minority Over-sampling Technique.
