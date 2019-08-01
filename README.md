@@ -74,7 +74,7 @@ Sample message categorization:
 ![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
 Though the model generalized well for most of the categories, some categories like 'child alone','shops','offer'
-simply did not have enough data to train on. In class imbalance problems like this, the model usually develops a bias towards the majority classes and the 'accuracy' score does not reflect the true model performance. That's why we used 'f1_score', a weighted harmonic mean of precision and recall as the metric for our model evaluation. As a possible next step, we can explore various strategies to improve the model performance:
+simply did not have enough data to train on. For instance, the 'child_alone' category did not even have a single positive sample. In class imbalance problems like this, the model usually develops a bias towards the majority classes and the 'accuracy' score does not reflect the true model performance. That's why we used 'f1_score', a weighted harmonic mean of precision and recall as the metric for our model evaluation. As a possible next step, we can explore various strategies to improve the model performance:
 * Gathering more data
 * Oversampling the minority and/or undersampling the majority class
 * Generating synthetic data using algorithms like Synthetic Minority Over-sampling Technique.
