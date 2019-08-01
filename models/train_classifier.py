@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.linear_model import RidgeClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report, f1_score
+from sklearn.metrics import classification_report
 from sklearn.externals import joblib
 
 
@@ -77,11 +77,13 @@ def build_model():
     Builds a machine learning pipeline.
     Uses grid search to find optimal hyperparameters
     '''
+    tvec = TfidfVectorizer(tokenizer=tokenize)
+    multi_clf = MultiOutputClassifier(RidgeClassifier(
+        alpha=1, tol=1e-2, solver="sag", random_state=42), n_jobs=-1)
 
     pipeline = Pipeline([
-        ('vect', TfidfVectorizer(tokenizer=tokenize)),
-        ('clf', MultiOutputClassifier(RidgeClassifier(
-            alpha=1, tol=1e-2, solver="sag", random_state=42), n_jobs=-1))
+        ('vect', tvec),
+        ('clf', multi_clf)
     ])
 
     parameters = {
@@ -103,10 +105,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     Y_pred = model.predict(X_test)
 
     for i, category in enumerate(category_names):
-        print(category+':\n',
-              classification_report(Y_test[category], Y_pred[:, i]))
-        f1_scores.append(
-            f1_score(Y_test[category], Y_pred[:, i], average='micro'))
+        print(category+':\n', classification_report(Y_test[category], Y_pred[:, i]))
 
 
 def save_model(model, model_filepath):
@@ -121,9 +120,9 @@ def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
+
         X, Y, category_names = load_data(database_filepath)
-        X_train, X_test, Y_train, Y_test = train_test_split(
-            X, Y, test_size=0.2, random_state=0)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
 
         print('Building model...')
         model = build_model()
