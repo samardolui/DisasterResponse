@@ -58,8 +58,6 @@ df = pd.read_sql_table('Disaster_Response', engine)
 model = joblib.load("../models/classifier.pkl")
 
 # index webpage displays cool visuals and receives user input text for model
-
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -91,18 +89,18 @@ def index():
     ]
 
     # extract data needed for visuals
-    cat_val = np.round(df[df.columns[4:40]].mean(
-        axis=0).sort_values(ascending=False)*100, 2)
-    cat_ids = [category.replace('_', ' ').title()
-               for category in cat_val.index]
+    category_mean = df[df.columns[4:40]].mean(axis=0).sort_values(ascending=False)
+    category_percentages = np.round(category_mean*100, 2)
+    category_counts = category_mean*len(df)
+    category_names = [category.replace('_', ' ').title() for category in category_mean.index]
 
     new_graph = {
         'data': [
             Bar(
-                x=cat_ids,
-                y=cat_val,
-                text=cat_val,
-                textposition='auto',
+                x=category_names,
+                y=category_counts,
+                text=category_percentages,
+                textposition='auto'
             )
         ],
 
@@ -150,7 +148,6 @@ def go():
 
 def main():
     app.run(host='127.0.0.1', port=8080, debug=True)
-
 
 if __name__ == '__main__':
     main()
