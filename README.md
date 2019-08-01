@@ -14,11 +14,15 @@ Besides the Anaconda distribution of Python, NLTK and sqlalchemy libraries needs
 Use below commands to install these two libraries.
 
 pip install nltk
+
 pip install SQLAlchemy
+
 pip install Flask
+
 conda install -c plotly plotly 
 
 Then run the below command to download relevant nltk libraries:
+
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger','stopwords'])
 
 After the installations, follow the below instruction using Python versions 3.*.
@@ -67,6 +71,14 @@ App user interface
 Result of a sample message categorization
 ![Result 2](https://raw.githubusercontent.com/samardolui/DisasterResponse/master/images/dis_res2.PNG)
 
+Though the model generalized well for most of the categories, some categories like 'child alone','shops','offer'
+simply did not have enough data to train on. In class imbalance problem like this , the model usually develops a bias towards the majority classes. As a possible next step, we can explore various strategies to handle this problem. 
+* Gathering more data
+* Oversampling the minority and/or undersampling the majority class
+* Generating synthetic data
+
+[This](https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/) awesome article by Jason Brownlee discusses this in more detail.
+
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-Credits to Udacity and [Figure Eight](https://www.figure-eight.com/dataset/combined-disaster-response-data/)  for coming up with the awesome project idea and compiling the dataset.
+Credits to [Udacity](https://www.udacity.com/) and [Figure Eight](https://www.figure-eight.com/dataset/combined-disaster-response-data/)  for coming up with the awesome project idea and compiling the dataset.
